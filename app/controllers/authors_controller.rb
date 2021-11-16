@@ -4,6 +4,7 @@ class AuthorsController < ApplicationController
     end
 
     def new
+        @author = Author.new
     end
 
     def index
@@ -14,8 +15,12 @@ class AuthorsController < ApplicationController
         #render plain: params[:article].inspect
         @author = Author.new(author_params)
 
-        @author.save
-        redirect_to author_path(@author), notice: 'Success!'
+        if @author.save
+            redirect_to author_path(@author), notice: 'Success!'
+            
+         else
+            render 'new'
+        end
     end
 
     private

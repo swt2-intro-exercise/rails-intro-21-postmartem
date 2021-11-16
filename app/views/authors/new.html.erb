@@ -1,5 +1,13 @@
 <h1>New Author</h1>
 <%= form_with scope: :author, url: authors_path, local: true do |form| %>
+
+  <% if @author.errors.any? %>
+    <p>
+    <%= form.label :"Nope" %><br>
+    <%= form.text_field :"You can't submit authors without a last name" %>
+  </p>
+
+  <% else %>
   <p>
     <%= form.label :"First Name" %><br>
     <%= form.text_field :first_name %>
@@ -18,4 +26,7 @@
   <p>
     <%= form.submit %>
   </p>
+  <% end %>
+    
+  
 <% end %>

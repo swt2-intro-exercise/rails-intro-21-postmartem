@@ -10,5 +10,6 @@ describe "Author instance creation", type: :model do
     #end
     # it 'should have the right homepage' do
         expect(author.homepage).to eq("http://wikipedia.org/Alan_Turing")
+        expect(author.name).to eq("Alan Turing")
     end
 end

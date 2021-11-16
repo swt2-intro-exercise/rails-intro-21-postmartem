@@ -7,5 +7,6 @@ describe "Show Author Page", type: :feature do
         expect(page).to have_text("First name")
         expect(page).to have_text("Alan")
     end
+    
 
 end 

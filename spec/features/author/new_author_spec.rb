@@ -18,5 +18,10 @@ require 'rails_helper'
     page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
     find('input[type="submit"]').click
    end
+   it 'should not accept authors without a last name' do
+    author = Author.new(first_name:"Alan", last_name:"", homepage:"http://wikipedia.org/Alan_Turing")
+    expect(author).to_not be_valid
+   end
+
 
  end

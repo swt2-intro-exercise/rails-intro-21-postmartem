@@ -4,8 +4,19 @@
   <% if @author.errors.any? %>
     <p>
     <%= form.label :"Nope" %><br>
-    <%= form.text_field :"You can't submit authors without a last name" %>
+    <%= form.label :"You can't submit authors without a last name" %>
   </p>
+  <div id="error_explanation">
+      <h2>
+        <%= pluralize(@author.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @author.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
 
   <% else %>
   <p>

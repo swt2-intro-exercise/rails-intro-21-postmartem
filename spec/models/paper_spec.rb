@@ -1,5 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe Paper, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "Paper instance creation", type: :model do
+    it 'have an empty author list' do 
+        paper = Paper.new(title:"ABC",venue:"DEF",year:10)
+        expect(paper.authors).to eq([])
+        
+    end
 end
+

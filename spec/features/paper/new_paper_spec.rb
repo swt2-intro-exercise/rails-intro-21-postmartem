@@ -16,6 +16,10 @@ require 'rails_helper'
     expect(@paper).to_not be_valid
    end
 
-   
+  # it 'should have an author list' do
+   # @paper = FactoryBot.create :paper
+    #expect(@paper.)
+  # end
+
 
   end

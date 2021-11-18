@@ -28,10 +28,5 @@ require 'rails_helper'
     expect(page).to have_field('paper[author_ids][]')
   end
 
-  it "should list title and year of all papers" do
-    visit paper_path
-    expect(page).to have_field('paper[author_ids][]')
-  end
-
 
   end

@@ -14,6 +14,14 @@ require 'rails_helper'
         page.fill_in 'author[homepage]', with: 'http://wikipedia.org/Alan_Turing'
         find('input[type="submit"]').click
     end
+    it 'should have a delete link' do
+        @author = FactoryBot.create :author
+        visit authors_path
+        expect(page).to have_link 'Delete'
+        expect(Author.count).to eq(1)
+        find('a[data-method="delete"]').click
+        expect(Author.count).to eq(0)
+    end
 
 
  end

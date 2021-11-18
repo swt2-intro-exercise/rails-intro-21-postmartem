@@ -8,7 +8,7 @@ class AuthorsController < ApplicationController
     end
 
     def edit
-        @autho = Author.find(params[:id])
+        @author = Author.find(params[:id])
       end
 
     def index
@@ -30,7 +30,7 @@ class AuthorsController < ApplicationController
     def update
         @author = Author.find(params[:id])
        
-        if @author.update(author _params)
+        if @author.update(author_params)
           redirect_to @author
         else
           render 'edit'

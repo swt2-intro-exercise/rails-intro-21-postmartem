@@ -6,9 +6,16 @@ require 'rails_helper'
     
    end
 
-   it 'should not accept papers without a last name' do
+   it 'should not accept papers without a title' do
     @paper = Paper.new(venue:"mind 49: 433-460", year:1950)
     expect(@paper).to_not be_valid
    end
+
+   it 'should not accept papers without a venue' do
+    @paper = Paper.new(title: "computing machinery and intelligence", year:1950)
+    expect(@paper).to_not be_valid
+   end
+
+   
 
   end

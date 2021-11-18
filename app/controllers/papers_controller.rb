@@ -3,9 +3,9 @@ class PapersController < ApplicationController
 
   # GET /papers
   def index
-    @paper = Paper.all
+    @papers = Paper.all
       if (params.has_key?(:year))
-        @paper = @paper.year_is(params[:year])
+        @papers = @papers.year_is(params[:year])
       end
   end
 

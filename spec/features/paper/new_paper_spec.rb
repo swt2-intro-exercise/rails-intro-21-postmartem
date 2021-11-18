@@ -16,10 +16,12 @@ require 'rails_helper'
     expect(@paper).to_not be_valid
    end
 
-  # it 'should have an author list' do
-   # @paper = FactoryBot.create :paper
-    #expect(@paper.)
-  # end
+   it 'should show an authors name on the papers page' do
+    @author = FactoryBot.create :author
+    @paper = @author.papers.create(title: "computing machinery and intelligence", venue: "mind 49: 433-460",year: 1950 )
+    visit paper_path(@paper)
+    expect(page).to have_text("Alan Turing")
+   end
 
 
   end

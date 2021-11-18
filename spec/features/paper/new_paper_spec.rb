@@ -23,5 +23,10 @@ require 'rails_helper'
     expect(page).to have_text("Alan Turing")
    end
 
+   it "should have a select for authors" do
+    visit new_paper_path
+    expect(page).to have_field('paper[author_ids][]')
+  end
+
 
   end

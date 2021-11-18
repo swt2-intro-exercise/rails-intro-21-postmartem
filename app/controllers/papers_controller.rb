@@ -5,7 +5,7 @@ class PapersController < ApplicationController
   def index
     @papers = Paper.all
       if (params.has_key?(:year))
-        @papers = @papers.year_is(params[:year])
+        @papers = @papers.year(params[:year])
       end
   end
 
